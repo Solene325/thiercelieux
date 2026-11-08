@@ -1,0 +1,29 @@
+{
+  "name": "loups-garous-thiercelieux",
+  "version": "1.0.0",
+  "description": "Les Loups-Garous de Thiercelieux — application temps réel jusqu'à 50 joueurs",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "bots": "node scripts/bots.js",
+    "test": "node scripts/simulate.js",
+    "test:narration": "node --test scripts/narration.test.js",
+    "test:invitation": "node --test scripts/invitation.test.js",
+    "test:composition": "node --test scripts/composition.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "htm": "^3.1.1",
+    "preact": "^10.25.4",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

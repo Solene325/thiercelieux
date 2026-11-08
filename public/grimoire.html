@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grimoire de Thiercelieux</title>
+  <link rel="icon" href="/img/brand/favicon-64.png" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="/img/brand/apple-touch-icon.png" sizes="180x180" />
+  <link rel="stylesheet" href="/css/fonts.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/redesign.css" />
+  <script type="importmap">
+    { "imports": { "preact": "/vendor/preact/dist/preact.module.js", "preact/hooks": "/vendor/preact/hooks/dist/hooks.module.js", "htm": "/vendor/htm/dist/htm.module.js", "htm/preact": "/vendor/htm/preact/index.module.js" } }
+  </script>
+</head>
+<body data-mood="night">
+  <div id="scene" class="scene" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <main id="app" class="grimoire-page"></main>
+  <script type="module">
+    import { html, render } from 'htm/preact';
+    import { Grimoire } from '/js/components/Grimoire.js';
+    await (await import('/js/art.js')).roleImagesReady;
+    render(html`<a class="back-home" href="/">← Retour au village</a><header class="over-head"><img class="grimoire-brand-mark" src="/img/brand/thiercelieux-emblem-transparent.webp" alt="" width="96" height="96" /><p class="kicker">Thiercelieux</p><h1 class="victory">Le Grimoire</h1><p class="lede">Les vingt-quatre âmes qui peuplent le village… et ses nuits.</p></header><${Grimoire} />`, document.getElementById('app'));
+  </script>
+</body>
+</html>
